@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="title">
+        <h1 *ngIf="!isEditing">ADICIONAR PRODUTO</h1>
+        <h1 *ngIf="isEditing">ALTERAR PRODUTO</h1>
+    </div>
+
+    <form     
+        role="form" 
+        name="produtoForm" 
+        novalidate="novalidate"
+        data-parsley-priority-enabled="false" 
+        method="post"         
+        autocomplete="off">
+
+        <div class="formGroup">
+            <label>Nome do Produto</label>
+            <input type="text" [(ngModel)]="produto.name" id="name" name="name"/>
+        </div>
+
+        <div class="formGroup">
+            <label>Categoria</label>
+            <select [(ngModel)]="produto.categoryId" id="cat" name="cat">
+                <option *ngFor="let categoria of categorias" value="{{categoria.id}}">{{categoria.name}}</option>
+            </select>
+        </div>
+
+        <div class="formGroup2">
+            <div class="column">
+                <div class="formGroup">
+                    <label>Quantidade</label>
+                    <input type="number" min="1" [(ngModel)]="produto.quantity" id="qtd" name="qtd"/>
+                </div>
+            </div>
+            <div class="column">
+                <div class="formGroup">
+                    <label>Preço</label>
+                    <div class="formGroupMoney">
+                        <span>R$</span>
+                        <input type="number" min="0.1" [(ngModel)]="produto.price" id="price" name="price"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="btnDiv">
+            <button *ngIf="!isEditing" class="btnSubmit" (click)="submit()" type="submit">Cadastrar</button>
+            <button *ngIf="isEditing" class="btnDelete" (click)="delete()">Excluir</button>
+            <button *ngIf="isEditing" class="btnSubmit" (click)="edit()">Alterar</button>
+        </div>
+    </form>
+</div>

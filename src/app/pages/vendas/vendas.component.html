@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="title">
+        <h1>VENDAS</h1>
+    </div>
+    <div class="produtosDiv">
+        <div class="produtoCats">
+            <h4 class="name">Data Venda</h4>
+            <h4 class="name">Cliente</h4>
+            <h4></h4>
+        </div>
+        <div class="produto" *ngFor="let venda of getItensPage()">
+            <h4 class="name">{{venda?.updatedAt | date : 'dd/MM/yyyy'}}</h4>
+            <h4 class="name">{{venda?.cliente?.name}}</h4>
+            <h4  (click)="goToDetail(venda)"><fa-icon [icon]="faInfo"></fa-icon></h4>
+        </div>
+    </div>
+    <div class="pagination" *ngIf="pages && pages > 1">
+        <div class="buttonsPag">
+            <div class="btnPag">
+                <fa-icon [icon]="faLeft" (click)="getPrevPage()" [class.desativado] = "currentPage === 1"></fa-icon>
+            </div>
+            <div class="btnPag">
+                <fa-icon [icon]="faRight" (click)="getNextPage()"  [class.desativado] = "currentPage === pages"></fa-icon>
+            </div>
+        </div>
+    </div>
+    <div class="addProduct">
+        <button *ngIf="role == 'venda' || role == 'admin'" (click)="addVenda()">+</button>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="backImage"></div>
+
+<div class="container">
+    <div class="logo"></div>
+
+    <form     
+        role="form" 
+        name="loginForm" 
+        novalidate="novalidate"
+        data-parsley-priority-enabled="false" 
+        method="post" 
+        (ngSubmit)="submit()" 
+        autocomplete="off">
+
+        <div class="emailDiv">
+            <input 
+                type="email" 
+                [(ngModel)]="loginRequest.email" 
+                autocomplete="new-mail" 
+                id="email"
+                name="email"
+                placeholder="email" 
+                class="email">
+        </div>
+        <div class="passwordDiv">
+            <input 
+                type="password" 
+                [(ngModel)]="loginRequest.password"  
+                autocomplete="new-password2"  
+                placeholder="senha" 
+                id="senha"
+                name="senha"
+                class="password">
+        </div>
+        <div class="btnDiv">
+            <button class="btnSubmit" type="submit">Entrar</button>
+        </div>
+    </form>
+</div>

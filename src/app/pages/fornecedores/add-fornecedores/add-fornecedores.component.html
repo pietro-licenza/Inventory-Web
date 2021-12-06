@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="title">
+        <h1 *ngIf="!isEditing">ADICIONAR FORNECEDOR</h1>
+        <h1 *ngIf="isEditing">ALTERAR FORNECEDOR</h1>
+    </div>
+
+    <form      
+        role="form" 
+        name="produtoForm" 
+        novalidate="novalidate"
+        data-parsley-priority-enabled="false" 
+        method="post"         
+        autocomplete="off">
+
+        <div class="formGroup">
+            <label>Nome do Fornecedor</label>
+            <input type="text" [(ngModel)]="fornecedor.name" id="name" name="name"/>
+        </div>
+
+        <div class="formGroup">
+            <label>Email do Fornecedor</label>
+            <input type="text" [(ngModel)]="fornecedor.email" id="email" name="email"/>
+        </div>
+
+        <div class="formGroup">
+            <label>CNPJ do Fornecedor</label>
+            <input type="text" [(ngModel)]="fornecedor.cnpj" id="cnpj" name="cnpj"/>
+        </div>
+
+        <div class="formGroup">
+            <label>Telefone Fornecedor</label>
+            <input type="text" [(ngModel)]="fornecedor.telefone" id="telefone" name="telefone"/>
+        </div>
+
+        <div class="btnDiv">
+            <button *ngIf="!isEditing" class="btnSubmit" (click)="submit()" type="submit">Cadastrar</button>
+            <button *ngIf="isEditing" class="btnDelete" (click)="delete()">Excluir</button>
+            <button *ngIf="isEditing" class="btnSubmit" (click)="edit()">Alterar</button>
+    
+        </div>
+    </form>
+</div>

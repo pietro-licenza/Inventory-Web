@@ -1,0 +1,206 @@
+.container {
+    padding: 30px;
+
+    .title {
+        text-align: center;
+        width: 100%;
+        background-color: #9364F1;
+        padding: 5px;
+
+        h1 {
+            color: #fff;
+            font-size: 25px;
+            margin: 10px 0px;
+        }
+    }
+
+    .produtoCats{
+        display: flex;
+        margin: 30px 10px 0px 30px;
+        
+        h4 {
+            flex: 1;
+            text-align: center;
+            margin: 5px;
+
+            &.name, &.categoria {
+                flex: 2;
+            }
+        }
+    }
+
+    .produtosDiv {
+        width: 60%;
+        margin: 0 auto;
+        margin-top: 10px;
+    
+        .produto {
+            width: calc(100% - 40px);
+            border: 1px solid #cacaca;
+            border-radius: 30px;
+            margin: 20px;
+            padding: 10px;
+            display: flex;
+
+            h4 {
+                flex: 1;
+                text-align: center;
+                margin: 5px;
+
+                &.name, &.categoria {
+                    flex: 2;
+                }
+            }
+        }
+    }
+    
+    form {
+        padding: 50px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .formGroup {
+            display: flex;
+            flex-direction: column;
+            margin: 20px 0px;
+
+            label {
+                font-weight: bold;
+                margin-bottom: 10px;
+                color: #534962;
+            }
+
+            input, select {
+                background: #fff;
+                width: 340px;
+                border-radius: 15px;
+                box-shadow: none;
+                outline: none;
+                border: 1px solid #9671f1;
+                font-size: 16px;
+                padding: 15px;
+
+                
+            }
+
+            select {
+                padding-right: 15px;
+                width: 370px;
+            }
+
+            .formGroupMoney {
+
+                display: flex;
+
+                span {
+                    border: 1px solid #9671f1;
+                    height: 48px;
+                    border-right: none;
+                    border-radius: 15px 0px 0px 15px;
+                    display: flex;
+                    align-items: center;
+                    padding: 0px 15px;
+                    font-size: 20px;
+                    color: #fff;
+                    background: #9671f1;
+                }
+                input {
+                    width: 100px;
+                    border-left: none;
+                    border-radius: 0px 15px 15px 0px;
+                }
+            }
+
+        }
+
+        .formGroup2 {
+            display: flex;
+            column-gap: 50px;
+
+            input {
+                width: 100px;
+            }
+        }
+
+        .btnDiv {
+            display: flex;
+            column-gap: 50px;
+        }
+        
+        .btnSubmit {
+            width: fit-content;
+            margin-top: 2rem;
+            border: none;
+            height: fit-content;
+            background: #ccd1ff;
+            color: #5e17eb;
+            border-radius: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 16px 40px;
+        }
+
+        .btnDelete {
+            width: fit-content;
+            margin-top: 2rem;
+            border: none;
+            height: fit-content;
+            background: #ff4646;
+            color: #fff;
+            border-radius: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 16px 40px;
+        }
+    }
+   
+}
+
+.contentsVendaWp {
+    padding: 50px;
+    text-align: center;
+
+    .contentsVenda {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+
+        span {
+            font-size: 1.3em;
+            padding-left: 15px;
+        }
+    }
+}
+
+.sub-title {
+    text-align: center;
+    width: 50%;
+    background-color: #9364F1;
+    padding: 5px;
+    margin: 0 auto;
+
+    h1 {
+        color: #fff;
+        font-size: 18px;
+        margin: 5px 0px;
+    }
+}
+
+.btnVenda {
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+
+    button {
+        background-color: #9364F1;
+        color: #fff;
+        outline: none;
+        border: none;
+        padding: 10px 15px;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+}

@@ -1,0 +1,88 @@
+<div class="container">
+    <div class="title">
+        <h1>CRIAR ORÇAMENTO</h1>
+    </div>
+
+    <form     
+        role="form" 
+        name="produtoForm" 
+        novalidate="novalidate"
+        data-parsley-priority-enabled="false" 
+        method="post"         
+        autocomplete="off">
+
+        <div class="formGroup">
+            <label>Cliente</label>
+            <select [(ngModel)]="venda.clientId" id="cat" name="cat">
+                <option *ngFor="let cliente of clientes" value="{{cliente.id}}">{{cliente.name}}</option>
+            </select>
+        </div>
+
+        <div class="formGroup">
+            <label>Método de Pagamento</label>
+            <select [(ngModel)]="venda.paymentMethod" id="cat1" name="cat1">
+                <option value="CARTAO_CREDITO">Cartão de Crédito</option>
+                <option value="CARTAO_DEBITO">Cartão de Débito</option>
+                <option value="BOLETO">Boleto</option>
+                <option value="PIX">PIX</option>
+                <option value="Dinheiro">Dinheiro</option>
+            </select>
+        </div>
+
+        <div class="sub-title">
+            <h1>Produtos</h1>
+         </div>
+    
+
+         <div class="prodcutsWp">
+             <div class="products formGroup2" *ngFor="let vp of venda.vendaProdutos; let i = index">
+                <div class="formGroup">
+                    <label>Produto</label>
+                    <select [(ngModel)]="vp.productId" (change)="qtdChanged(vp)" id="cat_{{i}}"  name="cat_{{i}}">
+                        <option *ngFor="let produto of produtos" value="{{produto.id}}">{{produto.name}}</option>
+                    </select>
+   
+                </div>
+                <div class="formGroup">
+                    <label>Quantidade</label>
+                    <input type="number" min="1" (change)="qtdChanged(vp)"  [(ngModel)]="vp.quantity" id="qtd_{{i}}" name="qtd_{{i}}"/>
+                </div>
+                <div class="formGroup">
+                    <label>Preço</label>
+                    <span class="vpPrice">{{vp.price| currency:'BRL'}}</span>
+                </div>
+                <fa-icon class="removeProd" (click)="removeProd(vp, i)" *ngIf="i != 0" [icon]="faMinus"></fa-icon>
+             </div>
+
+             <div class="total">
+                 <b>Total: {{venda.finalPrice| currency:'BRL'}}</b>
+             </div>
+
+             <div class="btnDiv btnDivAdd">
+                <button class="btnSubmit" (click)="addProduto()" type="button"><fa-icon [icon]="faPlus"></fa-icon> Adicionar Produto</button>
+            </div>
+         </div>
+
+        <!-- <div class="formGroup2">
+            <div class="column">
+                <div class="formGroup">
+                    <label>Quantidade</label>
+                    <input type="number" [(ngModel)]="produto.quantity" id="qtd" name="qtd"/>
+                </div>
+            </div>
+            <div class="column">
+                <div class="formGroup">
+                    <label>Preço</label>
+                    <div class="formGroupMoney">
+                        <span>R$</span>
+                        <input type="number" [(ngModel)]="produto.price" id="price" name="price"/>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="btnDiv">
+            <button class="btnSubmit" (click)="submit()" type="submit">Cadastrar</button>
+        </div>
+    </form>
+</div>

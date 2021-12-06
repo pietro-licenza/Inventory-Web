@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="title">
+        <h1>LISTA DE PRODUTOS</h1>
+    </div>
+    <div class="produtosDiv">
+        <div class="produtoCats">
+            <h4 class="name">Nome</h4>
+            <h4>Quantidade</h4>
+            <h4>Preço</h4>
+            <h4 class="categoria">Categoria</h4>
+            <h4></h4>
+        </div>
+        <div class="produto" *ngFor="let produto of getItensPage()">
+            <h4 class="name">{{produto?.name}}</h4>
+            <h4>{{produto?.quantity}}</h4>
+            <h4>{{produto?.price | currency: 'BRL'}}</h4>
+            <h4 class="categoria">{{produto?.categoria?.name}}</h4>
+            <h4 (click)="editProduct(produto)"><fa-icon [icon]="faPencil"></fa-icon></h4>
+        </div>
+    </div>
+    <div class="pagination" *ngIf="pages && pages > 1">
+        <div class="buttonsPag">
+            <div class="btnPag">
+                <fa-icon [icon]="faLeft" (click)="getPrevPage()" [class.desativado] = "currentPage === 1"></fa-icon>
+            </div>
+            <div class="btnPag">
+                <fa-icon [icon]="faRight" (click)="getNextPage()"  [class.desativado] = "currentPage === pages"></fa-icon>
+            </div>
+        </div>
+    </div>
+    <div class="addProduct">
+        <button (click)="addProduct()">+</button>
+    </div>
+</div>

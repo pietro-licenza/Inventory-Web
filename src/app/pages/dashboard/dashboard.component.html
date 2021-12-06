@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="title">
+        <h1>DASHBOARD</h1>
+    </div>
+    <div class="produtosDiv">
+       <div class="cards">
+           <div class="card">
+               <div class="card-title">Produtos</div>
+               {{totalProd}}
+           </div>
+
+           <div class="card">
+                <div class="card-title">Orçamentos</div>
+                {{totalOrcamentos}} |
+                {{totalValorOrcamentos | currency:'BRL'}}
+            </div>
+
+           <div class="card">
+                <div class="card-title">Vendas</div>
+                {{totalVendas}} |
+                {{totalValorVendas | currency:'BRL'}}
+            </div>
+
+            <div class="card">
+                <div class="card-title">Compras</div>
+                {{totalCompras}} |
+                {{totalValorCompras | currency:'BRL'}}
+            </div>
+
+           
+       </div>
+    </div>
+</div>

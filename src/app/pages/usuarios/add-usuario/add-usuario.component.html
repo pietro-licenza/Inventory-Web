@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="title">
+        <h1>ADICIONAR USUARIO</h1>
+    </div>
+
+    <form     
+        role="form" 
+        name="produtoForm" 
+        novalidate="novalidate"
+        data-parsley-priority-enabled="false" 
+        method="post"         
+        autocomplete="off">
+
+        <div class="formGroup">
+            <label>Nome do Usuario</label>
+            <input type="text" [(ngModel)]="usuario.name" id="name" name="name"/>
+        </div>
+
+        <div class="formGroup">
+            <label>Email do Usuario</label>
+            <input type="text" [(ngModel)]="usuario.email" id="email" name="email"/>
+        </div>
+
+        <div class="formGroup">
+            <label>Papel</label>
+            <select [(ngModel)]="usuario.role" id="cat" name="cat">
+                <option value="admin">ADMIN</option>
+                <option value="compra">COMPRA</option>
+                <option value="venda">VENDA</option>
+                <option value="view">VIEW - Apenas Visualização</option>
+            </select>
+        </div>
+
+        <div class="btnDiv">
+            <button class="btnSubmit" (click)="submit()" type="submit">Cadastrar</button>
+    
+        </div>
+    </form>
+</div>

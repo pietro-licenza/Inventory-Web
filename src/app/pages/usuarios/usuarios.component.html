@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="title">
+        <h1>USUÁRIOS</h1>
+    </div> 
+    <div class="produtosDiv">
+   <!--     <div class="produtoCats">
+            <h4 class="name">Nome</h4>
+            <h4 class="name">Email</h4>
+            <h4 class="name">Papel</h4>
+            <h4></h4>
+        </div>
+        <div class="produto" *ngFor="let usuario of usuarios">
+            <h4 class="name">{{usuario?.name}}</h4>
+            <h4 class="name">{{usuario?.email}}</h4>
+            <h4 class="name">{{usuario?.role}}</h4>
+            <h4 (click)="resetPwd(usuario)"><button>Resetar Senha</button></h4>
+        </div>
+    -->
+        <div class="produtoCats">
+           
+        </div>
+        <div class="produto" *ngFor="let usuario of usuarios">
+
+            <div class="names">
+                <h4 class="name">{{usuario?.name}}</h4>
+                <h4 class="name">{{usuario?.email}}</h4>
+                <h4 class="name">{{usuario?.role}}</h4>
+
+            </div>
+            <h4 class="btnVenda" (click)="resetPwd(usuario)"><button>Resetar Senha</button></h4>
+        </div>
+    </div>
+    <div class="addProduct">
+        <button (click)="addUsuario()">+</button>
+    </div>
+</div>

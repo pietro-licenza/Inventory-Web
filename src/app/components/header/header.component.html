@@ -1,0 +1,27 @@
+  <div class="container">
+      <h1 class="menu">Menu</h1>
+      <img class="logo" src="../../../assets/logo-ajustada.png" (click)="router.navigate(['/'])" />
+      
+      <div class="avatar-role">
+        <span class="username">{{getInitial()}}</span>
+        <div class="comboWp">
+          <div class="iconWp">
+            <fa-icon [icon]="faSortDown"></fa-icon>
+          </div>
+          <select (change)="comboChange($event)" class="comboHeader">
+            <option value="999"></option>
+            <option value="senha">Alterar Senha</option>
+            <option value="sair">Sair</option>
+          </select>
+        </div>
+      </div>
+  </div> 
+
+
+  <!-- <div class="iconWp">
+          <fa-icon [icon]="faPencil"></fa-icon>
+        </div>
+        <select class="comboHeader">
+          <option>Alterar Senha</option>
+          <option>Sair</option>
+        </select>-->

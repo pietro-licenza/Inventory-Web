@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="title">
+       <h1>COMPRA</h1>
+    </div>
+
+
+    <div class="contentsVendaWp">
+        <div class="contentsVenda">
+            <div class="cv">
+                <b>Data da Compra:</b>
+                <span>{{compra?.data | date : 'dd/MM/yyyy'}}</span>
+            </div>
+
+            <div class="cv">
+                <b>Fornecedor:</b>
+                <span>{{compra?.fornecedor?.name}}</span>
+            </div>
+
+            <div class="cv">
+                <b>Total:</b>
+                <span>{{compra?.finalPrice | currency:'BRL'}}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="sub-title">
+        <h1>Produtos</h1>
+     </div>
+
+     <div class="produtosDiv">
+        <div class="produtoCats">
+            <h4 class="name">Produto</h4>
+            <h4 class="name">Quantidade</h4>
+            <h4 class="name">Preço</h4>
+        </div>
+        <div class="produto" *ngFor="let vp of compra.compraProdutos">
+            <h4 class="name">{{vp?.produto?.name}}</h4>
+            <h4 class="name">{{vp?.quantity}}</h4>
+            <h4 class="name">{{vp?.price | currency:'BRL'}}</h4>
+        </div>
+    </div>
+    
+</div>

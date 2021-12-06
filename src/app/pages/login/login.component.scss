@@ -1,0 +1,65 @@
+.backImage {
+    background: transparent url('../../../assets/fundo-login.svg') 0% 0% no-repeat padding-box;
+    position: fixed;
+    top: -904.6494140625px;
+    left: -748.2841796875px;
+    width: 2247px;
+    height: 2465px;
+}
+
+.container {
+    max-height: 100vh;
+    max-width: 100vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .logo {
+        width: 46rem;
+        height: 35rem;
+        background: transparent url('../../../assets/logo.png') 0% 0% no-repeat padding-box;
+    }
+
+    .email {
+        font-size: 20px;
+        width: 606px;
+        height: 34px;
+        border: 1px solid #a5a5a5;
+        background: #fff padding-box;
+        border-radius: 50px;
+        opacity: 1;
+        outline: none;
+        padding: 8px 16px;
+        margin-bottom: 1rem;
+    }
+
+    .password {
+        font-size: 20px;
+        width: 606px;
+        height: 34px;
+        border: 1px solid #a5a5a5;
+        background: #fff 0% 0% no-repeat padding-box;
+        border-radius: 50px;
+        opacity: 1;
+        outline: none;
+        padding: 8px 16px;
+    }
+
+    .btnDiv {
+        text-align: center;
+    }
+    
+    .btnSubmit {
+        width: 459px;
+        margin-top: 2rem;
+        height: 65px;
+        background: #ccd1ff;
+        color: #5e17eb;
+        border-radius: 50px;
+        font-size: 20px;
+        cursor: pointer;
+        border: none;
+    }
+}

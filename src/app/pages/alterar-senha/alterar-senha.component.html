@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="title">
+        <h1>ALTERAR SENHA {{usuario.name}}</h1>
+    </div>
+
+    <form     
+        role="form" 
+        name="produtoForm" 
+        novalidate="novalidate"
+        data-parsley-priority-enabled="false" 
+        method="post"         
+        autocomplete="off">
+
+        <div class="formGroup">
+            <label>Nova Senha</label>
+            <input type="password" [(ngModel)]="usuario.password" id="pwd" name="pwd"/>
+        </div>
+
+        <div class="formGroup">
+            <label>Email do Usuario</label>
+            <input type="password" [(ngModel)]="confirmPwd" id="pwd2" name="pwd2"/>
+        </div>
+
+        <div class="btnDiv">
+            <button class="btnSubmit" (click)="submit()" type="submit">Alterar</button>
+    
+        </div>
+    </form>
+</div>

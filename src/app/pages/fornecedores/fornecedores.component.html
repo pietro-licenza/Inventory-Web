@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="title">
+        <h1>FORNECEDORES</h1>
+    </div>
+    <div class="produtosDiv">
+        <div class="produtoCats">
+            <h4 class="name">Nome</h4>
+            <h4 class="name">Email</h4>
+            <h4></h4>
+        </div>
+        <div class="produto" *ngFor="let fornecedor of fornecedores">
+            <h4 class="name">{{fornecedor?.name}}</h4>
+            <h4 class="name">{{fornecedor?.email}}</h4>
+            <h4 (click)="editFornecedor(fornecedor)"><fa-icon [icon]="faPencil"></fa-icon></h4>
+        </div>
+    </div>
+    <div class="addProduct">
+        <button (click)="addFornecedor()">+</button>
+    </div>
+</div>

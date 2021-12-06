@@ -1,0 +1,15 @@
+<div class="container">
+    <span (click)="router.navigate(['/dashboard'])">Dashboard</span>
+    <span (click)="router.navigate(['/produtos'])">Produtos</span>
+    <span (click)="router.navigate(['/categorias'])">Categorias</span>
+    <span (click)="router.navigate(['/vendas'])">Vendas</span>
+    <span (click)="router.navigate(['/compras'])">Compras</span>
+    <span (click)="router.navigate(['/clientes'])">Clientes</span>
+    <span (click)="router.navigate(['/fornecedores'])">Fornecedores</span>
+    <span (click)="router.navigate(['/orcamentos'])">Orçamento</span>
+    <span *ngIf="role == 'admin'"(click)="router.navigate(['/usuarios'])">Usuários</span>
+    <!--<span (click)="router.navigate(['/providers'])">Fornecedores</span>
+    <span (click)="router.navigate(['/users'])">Usuários</span>
+    <span (click)="router.navigate(['/clients'])">Clientes</span>-->
+    <span>&copy; Kings of Code</span>
+</div> 

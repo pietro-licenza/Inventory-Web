@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="title">
+        <h1>CLIENTES</h1>
+    </div>
+    <div class="produtosDiv">
+        <div class="produtoCats">
+            <h4 class="name">Nome</h4>
+            <h4 class="name">Email</h4>
+            <h4></h4>
+        </div>
+        <div class="produto" *ngFor="let cliente of clientes">
+            <h4 class="name">{{cliente?.name}}</h4>
+            <h4 class="name">{{cliente?.email}}</h4>
+            <h4 (click)="editCliente(cliente)"><fa-icon [icon]="faPencil"></fa-icon></h4>
+        </div>
+    </div>
+    <div class="addProduct">
+        <button (click)="addCliente()">+</button>
+    </div>
+</div>
